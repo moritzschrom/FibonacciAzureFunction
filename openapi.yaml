@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: Fibonacci Function
+  version: '1.0'
+servers:
+  - url: 'https://wi22m008fibonacci.azurewebsites.net'
+paths:
+  /api/fibonacciservice:
+    get:
+      summary: Get Fibonacci sequence
+      operationId: getFibonacci
+      parameters:
+        - name: length
+          in: query
+          description: The length of the Fibonacci sequence
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: integer
+        '400':
+          description: Invalid input
