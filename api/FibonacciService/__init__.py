@@ -2,9 +2,9 @@ import logging
 import azure.functions as func
 import fastapi
 
-app=fastapi.FastAPI()
+app = fastapi.FastAPI()
 
-@app.get("/FibonacciService/{length}")
+@app.get("/FibonacciService")
 async def fibonacci(length: int) -> List[int]:
     def generate_fibonacci(n):
         if n <= 0:
